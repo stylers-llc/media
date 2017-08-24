@@ -1,0 +1,28 @@
+{
+    "name": "stylers/media",
+    "description": "media system for Laravel",
+    "license": "MIT",
+    "repositories": [
+        {
+            "type": "vcs",
+            "url": "https://github.com/stylers-llc/taxonomy"
+        }
+    ],
+    "authors": [
+        {
+            "name": "Nasztanovics Dávid",
+            "email": "dnasztanovics@gmail.com"
+        }
+    ],
+    "minimum-stability": "stable",
+    "require": {
+        "php": ">=7.0",
+        "laravel/framework": "5.*",
+        "stylers/taxonomy": "1.*"
+    },
+    "autoload": {
+        "psr-4": {
+            "Stylers\\Media\\" : "src/"
+        }
+    }
+}
