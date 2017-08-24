@@ -2,9 +2,8 @@
 
 namespace Stylers\Media\Entities;
 
-use App\Entities\Entity;
 use Illuminate\Support\Facades\Config;
-use Modules\Stylerstaxonomy\Entities\DescriptionEntity;
+use Stylers\Taxonomy\Entities\DescriptionEntity;
 
 class FileEntity {
 

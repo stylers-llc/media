@@ -1,10 +1,4 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: sty021
- * Date: 2017.08.24.
- * Time: 11:27
- */
 
 namespace Stylers\Media\Providers;
 
@@ -12,7 +6,7 @@ use Illuminate\Routing\Router;
 use Illuminate\Support\Facades\View;
 use Illuminate\Support\ServiceProvider;
 
-class MediaServiceProviders extends ServiceProvider
+class MediaServiceProvider extends ServiceProvider
 {
     /**
      * Indicates if loading of the provider is deferred.

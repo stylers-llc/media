@@ -2,10 +2,10 @@
 
 namespace Stylers\Media\Manipulators;
 
-use App\Exceptions\UserException;
+use Stylers\Taxonomy\Exceptions\UserException;
 use Illuminate\Support\Facades\Config;
 use Stylers\Media\Models\Gallery;
-use Stylers\Taxonomy\Entities\Taxonomy;
+use Stylers\Taxonomy\Models\Taxonomy;
 use Stylers\Taxonomy\Manipulators\DescriptionSetter;
 
 class GallerySetter

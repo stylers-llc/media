@@ -1,15 +1,9 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: sty021
- * Date: 2017.08.24.
- * Time: 11:51
- */
 
 namespace Stylers\Media\Entities;
 
-use Stylers\Taxonomy\Entities\Entity;
 use Illuminate\Support\Facades\Config;
+use Stylers\Media\Models\Gallery;
 use Stylers\Taxonomy\Entities\DescriptionEntity;
 use Stylers\Taxonomy\Models\Taxonomy;
 use Stylers\Taxonomy\Entities\TaxonomyEntity;

@@ -1,21 +1,14 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: sty021
- * Date: 2017.08.24.
- * Time: 12:03
- */
 
 namespace Stylers\Media\Controllers;
 
-
-use App\Http\Controllers\Controller;
+use Illuminate\Routing\Controller;
 use Illuminate\Http\Request;
 use Illuminate\Http\Response;
-use Modules\Stylersmedia\Entities\File;
-use Modules\Stylersmedia\Entities\FileEntity;
-use Modules\Stylersmedia\Entities\GalleryItem;
-use Modules\Stylersmedia\Manipulators\FileSetter;
+use Stylers\Media\Models\File;
+use Stylers\Media\Models\FileEntity;
+use Stylers\Media\Models\GalleryItem;
+use Stylers\Media\Manipulators\FileSetter;
 
 class GalleryItemController extends Controller {
 

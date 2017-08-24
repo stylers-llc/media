@@ -2,7 +2,7 @@
 
 namespace Stylers\Media\Controllers;
 
-use App\Http\Controllers\Controller;
+use Illuminate\Routing\Controller;
 use Illuminate\Http\Request;
 use Illuminate\Http\Response;
 use Illuminate\Support\Facades\Config;
@@ -20,19 +20,6 @@ class GalleryController extends Controller
      * @return Response
      */
     public function index(Request $request) {
-        $organization = Organization::findOrFail($request->input('organization_id'));
-        $devices = $organization->devices;
-
-        $galleries = $organization->galleries;
-        foreach ($devices as $device) {
-            $galleries = $galleries->merge($device->galleries);
-        }
-
-        return [
-            'success' => true,
-            'data' => GalleryEntity::getCollection($galleries),
-            'options' => GalleryEntity::getOptions()
-        ];
     }
 
     /**
