@@ -4,6 +4,7 @@ namespace Stylers\Media\Entities;
 
 use Illuminate\Support\Facades\Config;
 use Stylers\Taxonomy\Entities\DescriptionEntity;
+use Stylers\Media\Models\File;
 
 class FileEntity {
 

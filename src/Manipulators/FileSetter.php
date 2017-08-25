@@ -44,7 +44,7 @@ class FileSetter
         $file->fill($this->attributes);
 
         if (!empty($this->attributes['type'])) {
-            $file->type_taxonomy_id = Taxonomy::getTaxonomy($this->attributes['type'], Config::get('taxonomies.file_type'))->id;
+            $file->type_taxonomy_id = Taxonomy::getTaxonomy($this->attributes['type'], Config::get('media.file_type'))->id;
         }
 
         if (!empty($this->attributes['description'])) {
@@ -64,6 +64,10 @@ class FileSetter
         $file = new File();
         $file->save();
         try {
+            if (!empty($this->attributes['description'])) {
+                $description = (new DescriptionSetter($this->attributes['description']))->set();
+                $file->description_id = $description->id;
+            }
             $file->extension = $file->getExtension($symfonyFile);
             $file->path = $file->getPath($symfonyFile);
             $absolutePath = $file->getAbsolutePath();
@@ -86,7 +90,7 @@ class FileSetter
     }
 
     private function saveScaledImages(File $file) {
-        $breakpoints = Config::get('stylersmedia.media_width_breakpoints');
+        $breakpoints = Config::get('media.media_width_breakpoints');
         $info = $file->getImageInfo();
 
         switch ($info['type']) {

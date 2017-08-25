@@ -48,7 +48,7 @@ class GalleryController extends Controller
         $gallery = Gallery::findOrFail($id);
         $gallery->fill($request->toArray());
         $gallery->name_description_id = $request->name ? (new DescriptionSetter($request->name, $gallery->name_description_id))->set()->id : null;
-        $gallery->role_taxonomy_id = $request->role ? Taxonomy::getTaxonomy($request->role, Config::get('taxonomies.gallery_role'))->id : null;
+        $gallery->role_taxonomy_id = $request->role ? Taxonomy::getTaxonomy($request->role, Config::get('media.gallery_role'))->id : null;
         $gallery->saveOrFail();
 
         return [

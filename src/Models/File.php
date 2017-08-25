@@ -8,7 +8,6 @@ use Illuminate\Support\Facades\DB;
 use Stylers\Taxonomy\Models\Description;
 use Stylers\Taxonomy\Models\Taxonomy;
 use Symfony\Component\HttpFoundation\File\File as SymfonyFile;
-use function storage_path;
 
 class File extends Model {
 
@@ -31,7 +30,7 @@ class File extends Model {
     }
 
     public function getAbsolutePath() {
-        return $this->getUploadDirectory(storage_path('public'), Config::get('media.media_image_dir')) . '/' . $this->path;
+        return $this->getUploadDirectory(public_path(), Config::get('media.media_image_dir')) . '/' . $this->path;
     }
 
     public function getExtension(SymfonyFile $symfonyFile = null) {
@@ -39,7 +38,7 @@ class File extends Model {
     }
 
     public function getPath(SymfonyFile $symfonyFile = null, $thumbName = null, $absolute = false) {
-        $root = $this->getUploadDirectory(storage_path('public'), Config::get('media.media_image_dir')) . '/';
+        $root = $this->getUploadDirectory(public_path(), Config::get('media.media_image_dir')) . '/';
         $ext = $this->getExtension($symfonyFile);
 
         $path = sprintf('%08s', floor($this->id / 1000000) * 1000000) . '/';
