@@ -38,7 +38,7 @@ class FileEntity {
     }
 
     static public function getRoot() {
-        return 'storage/' . Config::get('media.media_image_dir') . '/';
+        return Config::get('media.media_image_dir') . '/';
     }
 
     private function getThumbnails() {
