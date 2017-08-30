@@ -2,9 +2,10 @@
     "name": "stylers/media",
     "description": "media system for Laravel",
     "license": "MIT",
+    "type": "project",
     "repositories": [
         {
-            "type": "vcs",
+            "type": "git",
             "url": "https://github.com/stylers-llc/taxonomy"
         }
     ],
